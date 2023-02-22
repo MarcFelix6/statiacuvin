@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Products from "./pages/produse";
+import Navs from "./components/navbar/navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import WhiteWine from "./pages/whiteWine";
+import RedWine from "./pages/redWine";
+import RoseWine from "./pages/roseWine";
+import Formular from "./components/cartForm/form";
+import Cart from "./pages/cart";
+import Contact from "./components/contact/contact";
+import ToastMessage from "./components/toast/toast";
+import { Context } from "./context/store";
+import { useContext } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navs />
+        <main>
+          <Routes>
+            <Route index element={<Home />}></Route>
+            <Route path="/vinalb" element={<WhiteWine />}></Route>
+            <Route path="/vinrosu" element={<RedWine />}></Route>
+            <Route path="/vinroze" element={<RoseWine />}></Route>
+            <Route path="/magazin" element={<Cart />}></Route>
+            <Route path="/formular" element={<Formular />}></Route>
+          </Routes>
+          <Context.Consumer>
+            {({showToast}) => (
+              <ToastMessage
+                show={showToast.show}
+                title={showToast.title}
+                message={showToast.message}
+                position={showToast.position}
+                bg={showToast.bg}
+              />
+            )}
+          </Context.Consumer>
+        </main>
+        <Contact />
+      </Router>
+    </>
   );
 }
 

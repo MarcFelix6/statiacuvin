@@ -1,0 +1,87 @@
+.description {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  
+}
+
+.description .text-box {
+  position: relative;
+  max-width: 600px;
+  font-size: 1.3rem;
+}
+.description .text-box h3 {
+  color: #480000;
+}
+
+.description .text-box span {
+  color: #480000;
+}
+
+.description .image-box {
+  width: 600px;
+  display: flex;
+  object-fit: cover;
+  height: 250px;
+  margin-left: 15rem;
+}
+
+.description .image-box img {
+  max-width: 340px;
+  border-radius: 50%;
+}
+
+.about-bulk-wine {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  padding: 1rem;
+  
+ 
+}
+
+.about-bulk-wine p {
+  position: relative;
+  max-width: 600px;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.about-bulk-wine p span {
+  color: #480000;
+}
+
+.bulk-wine {
+  height: auto;
+  width: 420px;
+  display: flex;
+    
+}
+
+.bulk-wine img {
+  width: 320px;
+  border-radius: 50%;
+  height: 320px;
+  object-fit: cover;
+  
+}
+
+.wine-title{
+  color: #480000;
+}
+
+@media only screen and (max-width: 1000px) {
+  .description {
+    flex-wrap: wrap;
+  }
+  .description .image-box{
+    margin: 0;
+  }
+}
