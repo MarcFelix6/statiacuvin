@@ -16,7 +16,7 @@ const ToastMessage = ({ position, title, message, show }) => {
           bg: "success",
         });
         clearTimeout(id);
-      }, 5000);
+      }, 3000);
     }
   }, [show]);
 

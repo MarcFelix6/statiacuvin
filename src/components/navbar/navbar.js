@@ -14,8 +14,8 @@ const Navs = () => {
     <>
     <div className="navBar-mini d-flex justify-content-end align-items-center" style={{backgroundColor:"#222"}}>
       <ul className="d-flex  m-1 me-1" style={{listStyle: "none", color:"#c09148"}}> 
-      <li className="me-2" >Telefon: 0256 281 043</li>
-      <li className="me-2" >Email: statiacuvin@gmail.com</li>
+      <li className="me-2" ><a className="nav-link" href="tel:+0256281043">Telefon: 0256 281 043</a></li>
+      <li className="me-2" ><a className="nav-link" href="mailto:statiacuvin@gmail.com">Email: statiacuvin@gmail.com</a></li>
       </ul>
       </div>
     <Navbar className="d-flex justify-content-around "  expand="md" sticky="top"  variant="light" style={{backgroundColor:"#c09148", height:"6rem"}}>

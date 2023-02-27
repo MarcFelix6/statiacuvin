@@ -1,5 +1,5 @@
 import "./App.css";
-import Products from "./pages/produse";
+
 import Navs from "./components/navbar/navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
@@ -28,7 +28,7 @@ function App() {
             <Route path="/formular" element={<Formular />}></Route>
           </Routes>
           <Context.Consumer>
-            {({showToast}) => (
+            {({ showToast }) => (
               <ToastMessage
                 show={showToast.show}
                 title={showToast.title}

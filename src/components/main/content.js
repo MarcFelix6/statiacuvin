@@ -5,7 +5,7 @@ const Content = () => {
 
   
   return (
-    <Container fluid="md">
+    <Container >
       <header>
         <div className="description">
           <div className="text-box">

@@ -3,6 +3,7 @@ import { Container, Spinner } from "react-bootstrap";
 import { Context } from "../../context/store";
 import emailjs from "@emailjs/browser";
 
+
 const Formular = ({ message, onEmailSuccess }) => {
   const [showSpinner, setShowSpinner] = useState(false);
 
@@ -18,7 +19,7 @@ const Formular = ({ message, onEmailSuccess }) => {
 
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
-        console.log(result.text);
+        
         setShowSpinner(false);
         setShowToast({
           show: true,
@@ -121,11 +122,11 @@ const Formular = ({ message, onEmailSuccess }) => {
               type="text"
               readOnly
               value={message
-                .map(
+                ?.map(
                   (prod) =>
                     `Nume: ${prod.nume} / Pret: ${prod.pret} / Qty: ${prod.qty}`
                 )
-                .join("|") | ""}
+                .join('\n')}
               name="message"
               required
             />

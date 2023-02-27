@@ -31,10 +31,13 @@ const Cart = () => {
         obj.qty = 1;
         newList.push(obj);
       }
+      
     });
     setCartList(newList);
+    
   }, [cartItems]);
 
+  
   const handleIncQty = (productItem) => {
     productItem.qty++;
     const newCartList = [...cartList];
@@ -60,6 +63,7 @@ const Cart = () => {
     );
   }
 
+
   return (
     <section className="py-4 container">
       <div className="row justify-content-center">
@@ -74,7 +78,7 @@ const Cart = () => {
                     </td>
 
                     <td>{cartItem.nume}</td>
-                    <td>{cartItem.pret}</td>
+                    <td>{`${cartItem.pret} Lei`}</td>
                     <td>Cantitate {cartItem.Cantitate}</td>
                     <td>
                       <div>{cartItem.qty}.buc</div>
@@ -99,7 +103,7 @@ const Cart = () => {
                         Sterge
                       </button>
                     </td>
-                    <td>{(cartItem.pret * cartItem.qty).toFixed(2)}</td>
+                    <td>{(cartItem.pret * cartItem.qty).toFixed(2)}<span className="ms-1">Lei</span></td>
                   </tr>
                 );
               })}
@@ -110,12 +114,11 @@ const Cart = () => {
           <button className="btn btn-danger ms-2" onClick={clearCart}>
             Goleste Cosul
           </button>
-          {/* <Link to="/formular"> <button className="btn btn-primary ms-2">Cumpara</button> </Link> */}
+          
         </div>
         <div className="col-auto ms-auto " style={{ marginTop: "2rem" }}>
           <h2>
-            Total{" "}
-            {cartList.reduce((acc, prod) => acc + prod.pret * prod.qty, 0)}
+            {`Total ${cartList.reduce((acc, prod) => acc + prod.pret * prod.qty, 0)} Lei`}
           </h2>
         </div>
         <div>
